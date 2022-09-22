@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { deleteTask } from "../features/tasks/taskSlice";
 
 const TaskList = () => {
@@ -19,6 +20,7 @@ const TaskList = () => {
           <div>{task.title}</div>
           <div>{task.description}</div>
           <button onClick={() => handleDelete(task.id)}>Delete</button>
+          <Link to={`/edit-task/${task.id}`}>Edit</Link>
         </div>
       ))}
     </>
